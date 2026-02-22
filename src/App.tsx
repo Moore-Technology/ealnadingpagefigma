@@ -30,7 +30,7 @@ export default function App() {
   const handleGetStarted = () => {
     if (user) {
       // Redirect to dashboard if user is signed in
-      window.location.replace('https://redesigneastudyappdashboard.vercel.app/dashboard');
+      window.location.replace('https://app.eacoachpro.com/dashboard');
     } else {
       // Show local dashboard for demo
       setViewMode('dashboard');
