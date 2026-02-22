@@ -19,14 +19,13 @@ import { ResponsiveNavigation } from './components/ResponsiveNavigation';
 import { LandingPage } from './components/LandingPage';
 import { GraduationCap, Bell, Settings, Menu, Zap, Trophy, BookOpen, Target } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { SignedIn, SignedOut, UserButton, useUser, useAuth } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react';
 
 type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'part-progress' | 'domain-bridge';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
   const { user, isLoaded, isSignedIn } = useUser();
-  const { getToken } = useAuth();
 
   // Debug logging
   console.log('🔍 App State:', {
@@ -37,22 +36,9 @@ export default function App() {
     viewMode
   });
 
-  const handleGetStarted = async () => {
-    console.log('🎯 handleGetStarted called', {
-      isLoaded,
-      isSignedIn,
-      hasUser: !!user,
-      userId: user?.id
-    });
-    
-    const token = await getToken();
-    if (token) {
-      console.log('✅ User authenticated, redirecting with token...');
-      window.location.href = `https://app.eacoachpro.com/dashboard?__clerk_db_jwt=${token}`;
-    } else {
-      console.log('❌ No token, redirecting without it');
-      window.location.href = 'https://app.eacoachpro.com/dashboard';
-    }
+  const handleGetStarted = () => {
+    console.log('🎯 handleGetStarted called - redirecting to dashboard');
+    window.location.href = 'https://app.eacoachpro.com/dashboard';
   };
 
   // Track authentication state changes (logging only, no auto-redirect)
