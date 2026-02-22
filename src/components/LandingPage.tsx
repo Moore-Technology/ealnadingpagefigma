@@ -206,9 +206,9 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                   <div className="bg-gradient-to-br from-white/[0.08] to-white/[0.03] rounded-2xl p-6 border border-white/10">
                     <div className="flex items-center gap-3 mb-4">
                       <img 
-                        src="/ai-mentor-transparent.png" 
+                        src="/ai-mentor-final.png" 
                         alt="AI Mentor" 
-                        className="w-16 h-16 object-contain"
+                        className="w-16 h-16 object-contain rounded-lg"
                       />
                       <span className="text-white font-semibold">AI Mentor</span>
                       <span className="ml-auto px-2 py-1 bg-[#50FA7B]/20 border border-[#50FA7B]/30 rounded-lg text-xs text-[#50FA7B] animate-pulse">
