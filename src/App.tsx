@@ -27,18 +27,19 @@ export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
   const { user } = useUser();
 
+  const handleGetStarted = () => {
+    if (user) {
+      // Redirect to dashboard if user is signed in
+      window.location.replace('https://redesigneastudyappdashboard.vercel.app/dashboard');
+    } else {
+      // Show local dashboard for demo
+      setViewMode('dashboard');
+    }
+  };
+
   // Landing page view
   if (viewMode === 'landing') {
-    return (
-      <>
-        <SignedOut>
-          <LandingPage onGetStarted={() => setViewMode('dashboard')} />
-        </SignedOut>
-        <SignedIn>
-          <LandingPage onGetStarted={() => window.location.href = 'https://redesigneastudyappdashboard.vercel.app/dashboard'} />
-        </SignedIn>
-      </>
-    );
+    return <LandingPage onGetStarted={handleGetStarted} />;
   }
 
   // Exam simulation view
