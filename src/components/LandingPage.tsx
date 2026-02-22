@@ -235,38 +235,13 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     
                     <div className="relative z-10 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        {/* Pure CSS Animated Fire - Simplified */}
-                        <div className="relative w-12 h-14 flex items-center justify-center">
-                          {/* Red outer layer */}
-                          <div className="absolute bottom-0 w-10 h-10 bg-gradient-to-t from-red-600 via-red-500 to-orange-500 opacity-80 animate-[fireFlicker_1.5s_ease-in-out_infinite]" 
-                               style={{ 
-                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                                 animationDelay: '0s'
-                               }} />
-                          
-                          {/* Orange middle layer */}
-                          <div className="absolute bottom-1 w-8 h-11 bg-gradient-to-t from-orange-600 via-orange-400 to-yellow-400 opacity-90 animate-[fireFlicker_1.2s_ease-in-out_infinite]" 
-                               style={{ 
-                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                                 animationDelay: '0.3s'
-                               }} />
-                          
-                          {/* Yellow inner layer */}
-                          <div className="absolute bottom-2 w-6 h-8 bg-gradient-to-t from-yellow-400 via-yellow-300 to-white opacity-95 animate-[fireFlicker_0.9s_ease-in-out_infinite]" 
-                               style={{ 
-                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                                 animationDelay: '0.6s'
-                               }} />
-                          
-                          {/* White hot center */}
-                          <div className="absolute bottom-4 w-3 h-4 bg-white opacity-70 animate-[fireFlicker_0.7s_ease-in-out_infinite]" 
-                               style={{ 
-                                 borderRadius: '50%',
-                                 animationDelay: '0.2s'
-                               }} />
-                          
-                          {/* Outer glow */}
-                          <div className="absolute bottom-0 w-14 h-14 bg-orange-500 opacity-30 blur-xl animate-pulse" />
+                        {/* Animated Fire GIF */}
+                        <div className="relative w-12 h-12 flex items-center justify-center">
+                          <img 
+                            src="/fire-animation.gif" 
+                            alt="Streak Fire" 
+                            className="w-12 h-12 object-contain"
+                          />
                         </div>
                         
                         <div>
