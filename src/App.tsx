@@ -35,7 +35,7 @@ export default function App() {
           <LandingPage onGetStarted={() => setViewMode('dashboard')} />
         </SignedOut>
         <SignedIn>
-          <LandingPage onGetStarted={() => setViewMode('dashboard')} />
+          <LandingPage onGetStarted={() => window.location.href = 'https://redesigneastudyappdashboard.vercel.app/dashboard'} />
         </SignedIn>
       </>
     );
