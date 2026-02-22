@@ -19,13 +19,14 @@ import { ResponsiveNavigation } from './components/ResponsiveNavigation';
 import { LandingPage } from './components/LandingPage';
 import { GraduationCap, Bell, Settings, Menu, Zap, Trophy, BookOpen, Target } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton, useUser, useAuth } from '@clerk/clerk-react';
 
 type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'part-progress' | 'domain-bridge';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
   const { user, isLoaded, isSignedIn } = useUser();
+  const { getToken } = useAuth();
   const DASHBOARD_URL = 'https://capital-anchovy-0.accounts.dev/__clerk_db_jwt=';
 
   // Debug logging
@@ -49,7 +50,7 @@ export default function App() {
     if (user) {
       console.log('✅ User authenticated, redirecting via Clerk FAPI...');
       // Use Clerk's FAPI redirect with token for proper session handoff
-      const token = await user.getToken();
+      const token = await getToken();
       const redirectUrl = `${DASHBOARD_URL}${token}#/dashboard`;
       console.log('🚀 Redirecting to:', redirectUrl);
       window.location.href = redirectUrl;
