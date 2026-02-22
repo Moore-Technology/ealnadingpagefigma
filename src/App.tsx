@@ -26,11 +26,12 @@ type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'pa
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
   const { user } = useUser();
+  const DASHBOARD_URL = 'https://app.eacoachpro.com/dashboard';
 
   const handleGetStarted = () => {
     if (user) {
       // Redirect to dashboard if user is signed in
-      window.location.replace('https://app.eacoachpro.com/dashboard');
+      window.location.replace(DASHBOARD_URL);
     } else {
       // Show local dashboard for demo
       setViewMode('dashboard');
