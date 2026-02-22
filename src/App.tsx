@@ -26,7 +26,7 @@ type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'pa
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
   const { user, isLoaded, isSignedIn } = useUser();
-  const DASHBOARD_URL = 'https://app.eacoachpro.com/dashboard';
+  const DASHBOARD_URL = 'https://capital-anchovy-0.accounts.dev/__clerk_db_jwt=';
 
   // Debug logging
   console.log('🔍 App State:', {
@@ -38,7 +38,7 @@ export default function App() {
     DASHBOARD_URL
   });
 
-  const handleGetStarted = () => {
+  const handleGetStarted = async () => {
     console.log('🎯 handleGetStarted called', {
       isLoaded,
       isSignedIn,
@@ -47,9 +47,12 @@ export default function App() {
     });
     
     if (user) {
-      console.log('✅ User authenticated, redirecting to:', DASHBOARD_URL);
-      // Redirect to dashboard if user is signed in
-      window.location.replace(DASHBOARD_URL);
+      console.log('✅ User authenticated, redirecting via Clerk FAPI...');
+      // Use Clerk's FAPI redirect with token for proper session handoff
+      const token = await user.getToken();
+      const redirectUrl = `${DASHBOARD_URL}${token}#/dashboard`;
+      console.log('🚀 Redirecting to:', redirectUrl);
+      window.location.href = redirectUrl;
     } else {
       console.log('❌ No user, showing local dashboard');
       // Show local dashboard for demo
