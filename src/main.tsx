@@ -16,15 +16,15 @@
   console.log('🔐 Clerk Configuration:', {
     hasPublishableKey: !!PUBLISHABLE_KEY,
     keyPrefix: PUBLISHABLE_KEY?.substring(0, 10) + '...',
-    afterSignInUrl,
-    afterSignUpUrl
+    signInFallbackRedirectUrl: afterSignInUrl,
+    signUpFallbackRedirectUrl: afterSignUpUrl
   });
 
   createRoot(document.getElementById("root")!).render(
     <ClerkProvider 
       publishableKey={PUBLISHABLE_KEY}
-      afterSignInUrl={afterSignInUrl}
-      afterSignUpUrl={afterSignUpUrl}
+      signInFallbackRedirectUrl={afterSignInUrl}
+      signUpFallbackRedirectUrl={afterSignUpUrl}
     >
       <App />
     </ClerkProvider>
