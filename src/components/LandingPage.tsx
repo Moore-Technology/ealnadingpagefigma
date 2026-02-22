@@ -53,7 +53,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               </SignedOut>
               <SignedIn>
                 <button 
-                  onClick={onGetStarted}
+                  onClick={() => {
+                    console.log('🔴 NAV BUTTON CLICKED');
+                    onGetStarted();
+                  }}
                   className="px-5 py-2.5 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-lg shadow-[#FF8C00]/30 hover:shadow-[#FF8C00]/50 text-sm font-semibold flex items-center gap-2"
                 >
                   Go to Dashboard
@@ -97,7 +100,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 </SignedOut>
                 <SignedIn>
                   <button 
-                    onClick={onGetStarted}
+                    onClick={() => {
+                      console.log('🔴 HERO BUTTON CLICKED');
+                      onGetStarted();
+                    }}
                     className="group px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-2xl shadow-[#FF8C00]/40 hover:shadow-[#FF8C00]/60 font-semibold text-lg flex items-center justify-center gap-2"
                   >
                     Go to Dashboard
