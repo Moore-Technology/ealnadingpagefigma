@@ -1,6 +1,6 @@
-import { GraduationCap, Sparkles, Brain, Target, Zap, TrendingUp, CheckCircle2, Award, Users, Star, ArrowRight, ChevronRight, BarChart3, MessageSquare, Flame, X } from 'lucide-react';
+import { GraduationCap, Sparkles, Brain, Target, Zap, TrendingUp, CheckCircle2, Award, Users, Star, ArrowRight, ChevronRight, BarChart3, MessageSquare, Flame, X, LogOut } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { SignInButton, SignUpButton, SignedIn, SignedOut } from '@clerk/clerk-react';
+import { SignInButton, SignUpButton, SignedIn, SignedOut, SignOutButton } from '@clerk/clerk-react';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -52,6 +52,12 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 </SignUpButton>
               </SignedOut>
               <SignedIn>
+                <SignOutButton>
+                  <button className="hidden md:flex items-center gap-2 px-5 py-2.5 text-white hover:bg-white/10 border border-white/20 rounded-xl transition-all text-sm">
+                    <LogOut className="w-4 h-4" />
+                    Sign Out
+                  </button>
+                </SignOutButton>
                 <button 
                   onClick={() => {
                     console.log('🔴 NAV BUTTON CLICKED');
@@ -109,6 +115,12 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     Go to Dashboard
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
+                  <SignOutButton>
+                    <button className="group px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-xl transition-all font-semibold text-lg flex items-center justify-center gap-2">
+                      <LogOut className="w-5 h-5" />
+                      Sign Out
+                    </button>
+                  </SignOutButton>
                 </SignedIn>
                 <button className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-xl transition-all font-semibold text-lg flex items-center justify-center gap-2">
                   <Star className="w-5 h-5 text-[#50FA7B]" />
