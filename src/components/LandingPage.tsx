@@ -235,12 +235,31 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     
                     <div className="relative z-10 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        {/* Animated Fire Icon */}
-                        <div className="relative">
-                          <Flame className="w-8 h-8 text-[#FF8C00] animate-[flicker_1.5s_ease-in-out_infinite]" />
-                          <Flame className="w-8 h-8 text-[#FFA500] absolute top-0 left-0 opacity-50 animate-[flicker_1s_ease-in-out_infinite]" />
-                          <div className="absolute -inset-2 bg-[#FF8C00]/30 rounded-full blur-xl animate-pulse" />
+                        {/* Animated Multi-layer Fire Icon */}
+                        <div className="relative w-10 h-10">
+                          {/* Outer glow */}
+                          <div className="absolute inset-0 bg-[#FF8C00] rounded-full blur-2xl opacity-60 animate-pulse" />
+                          
+                          {/* Red base flame (layer 1) */}
+                          <Flame className="w-10 h-10 text-red-600 absolute top-0 left-0 animate-[flicker_2s_ease-in-out_infinite] drop-shadow-lg" 
+                                 style={{ animationDelay: '0s' }} />
+                          
+                          {/* Orange middle flame (layer 2) */}
+                          <Flame className="w-10 h-10 text-[#FF8C00] absolute top-0 left-0 animate-[flicker_1.5s_ease-in-out_infinite] drop-shadow-lg" 
+                                 style={{ animationDelay: '0.3s' }} />
+                          
+                          {/* Yellow top flame (layer 3) */}
+                          <Flame className="w-10 h-10 text-yellow-400 absolute top-0 left-0 animate-[flicker_1s_ease-in-out_infinite] drop-shadow-lg" 
+                                 style={{ animationDelay: '0.6s' }} />
+                          
+                          {/* White hot center */}
+                          <Flame className="w-6 h-6 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[flicker_0.8s_ease-in-out_infinite] opacity-80" 
+                                 style={{ animationDelay: '0.2s' }} />
+                          
+                          {/* Pulsing glow ring */}
+                          <div className="absolute -inset-3 bg-gradient-to-t from-[#FF8C00]/40 via-[#FFA500]/20 to-transparent rounded-full blur-xl animate-[pulse_1.5s_ease-in-out_infinite]" />
                         </div>
+                        
                         <div>
                           <p className="text-2xl font-bold text-white">12 Days</p>
                           <p className="text-sm text-slate-400">Study streak</p>
