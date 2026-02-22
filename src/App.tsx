@@ -19,15 +19,26 @@ import { ResponsiveNavigation } from './components/ResponsiveNavigation';
 import { LandingPage } from './components/LandingPage';
 import { GraduationCap, Bell, Settings, Menu, Zap, Trophy, BookOpen, Target } from 'lucide-react';
 import { useState } from 'react';
+import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react';
 
 type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'part-progress' | 'domain-bridge';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
+  const { user } = useUser();
 
   // Landing page view
   if (viewMode === 'landing') {
-    return <LandingPage onGetStarted={() => setViewMode('dashboard')} />;
+    return (
+      <>
+        <SignedOut>
+          <LandingPage onGetStarted={() => setViewMode('dashboard')} />
+        </SignedOut>
+        <SignedIn>
+          <LandingPage onGetStarted={() => setViewMode('dashboard')} />
+        </SignedIn>
+      </>
+    );
   }
 
   // Exam simulation view
@@ -138,6 +149,17 @@ export default function App() {
                 <ActiveStreak days={12} />
               </div>
               
+              {/* User Authentication */}
+              <SignedIn>
+                <UserButton 
+                  appearance={{
+                    elements: {
+                      avatarBox: "w-10 h-10"
+                    }
+                  }}
+                />
+              </SignedIn>
+              
               {/* Quick Actions */}
               <button className="p-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors relative">
                 <Bell className="w-5 h-5 text-slate-300" />
@@ -163,7 +185,7 @@ export default function App() {
             <div className="bg-gradient-to-br from-[#FF8C00]/10 via-white/5 to-[#BD93F9]/10 backdrop-blur-xl rounded-[24px] border border-white/10 p-6 shadow-2xl">
               <div className="flex items-start justify-between">
                 <div>
-                  <h2 className="text-white/90 text-2xl mb-2">Welcome back, Sarah! 🎯</h2>
+                  <h2 className="text-white/90 text-2xl mb-2">Welcome back, {user?.firstName || 'Student'}! 🎯</h2>
                   <p className="text-slate-400">
                     You're making great progress. Keep your streak alive!
                   </p>

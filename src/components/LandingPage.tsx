@@ -1,5 +1,6 @@
 import { GraduationCap, Sparkles, Brain, Target, Zap, TrendingUp, CheckCircle2, Award, Users, Star, ArrowRight, ChevronRight, BarChart3, MessageSquare, Flame, X } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { SignInButton, SignUpButton, SignedIn, SignedOut } from '@clerk/clerk-react';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -37,16 +38,28 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             </div>
 
             <div className="flex items-center gap-3">
-              <button className="hidden md:block px-5 py-2.5 text-white hover:bg-white/10 border border-white/20 rounded-xl transition-all text-sm">
-                Sign In
-              </button>
-              <button 
-                onClick={onGetStarted}
-                className="px-5 py-2.5 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-lg shadow-[#FF8C00]/30 hover:shadow-[#FF8C00]/50 text-sm font-semibold flex items-center gap-2"
-              >
-                Get Started Free
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="hidden md:block px-5 py-2.5 text-white hover:bg-white/10 border border-white/20 rounded-xl transition-all text-sm">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="px-5 py-2.5 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-lg shadow-[#FF8C00]/30 hover:shadow-[#FF8C00]/50 text-sm font-semibold flex items-center gap-2">
+                    Get Started Free
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <button 
+                  onClick={onGetStarted}
+                  className="px-5 py-2.5 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-lg shadow-[#FF8C00]/30 hover:shadow-[#FF8C00]/50 text-sm font-semibold flex items-center gap-2"
+                >
+                  Go to Dashboard
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </SignedIn>
             </div>
           </div>
         </div>
@@ -74,13 +87,23 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <button 
-                  onClick={onGetStarted}
-                  className="group px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-2xl shadow-[#FF8C00]/40 hover:shadow-[#FF8C00]/60 font-semibold text-lg flex items-center justify-center gap-2"
-                >
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <SignedOut>
+                  <SignUpButton mode="modal">
+                    <button className="group px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-2xl shadow-[#FF8C00]/40 hover:shadow-[#FF8C00]/60 font-semibold text-lg flex items-center justify-center gap-2">
+                      Start Free Trial
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <button 
+                    onClick={onGetStarted}
+                    className="group px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-2xl shadow-[#FF8C00]/40 hover:shadow-[#FF8C00]/60 font-semibold text-lg flex items-center justify-center gap-2"
+                  >
+                    Go to Dashboard
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </SignedIn>
                 <button className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-xl transition-all font-semibold text-lg flex items-center justify-center gap-2">
                   <Star className="w-5 h-5 text-[#50FA7B]" />
                   Watch Demo
