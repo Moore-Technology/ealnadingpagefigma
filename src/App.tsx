@@ -18,25 +18,63 @@ import { DomainBridge } from './components/DomainBridge';
 import { ResponsiveNavigation } from './components/ResponsiveNavigation';
 import { LandingPage } from './components/LandingPage';
 import { GraduationCap, Bell, Settings, Menu, Zap, Trophy, BookOpen, Target } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react';
 
 type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'part-progress' | 'domain-bridge';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
-  const { user } = useUser();
+  const { user, isLoaded, isSignedIn } = useUser();
   const DASHBOARD_URL = 'https://app.eacoachpro.com/dashboard';
 
+  // Debug logging
+  console.log('🔍 App State:', {
+    isLoaded,
+    isSignedIn,
+    hasUser: !!user,
+    userId: user?.id,
+    viewMode,
+    DASHBOARD_URL
+  });
+
   const handleGetStarted = () => {
+    console.log('🎯 handleGetStarted called', {
+      isLoaded,
+      isSignedIn,
+      hasUser: !!user,
+      userId: user?.id
+    });
+    
     if (user) {
+      console.log('✅ User authenticated, redirecting to:', DASHBOARD_URL);
       // Redirect to dashboard if user is signed in
       window.location.replace(DASHBOARD_URL);
     } else {
+      console.log('❌ No user, showing local dashboard');
       // Show local dashboard for demo
       setViewMode('dashboard');
     }
   };
+
+  // Track authentication state changes
+  useEffect(() => {
+    console.log('🔄 Auth State Changed:', {
+      isLoaded,
+      isSignedIn,
+      hasUser: !!user,
+      userId: user?.id,
+      email: user?.primaryEmailAddress?.emailAddress
+    });
+
+    // Auto-redirect if user is signed in and on landing page
+    if (isLoaded && isSignedIn && user && viewMode === 'landing') {
+      console.log('🚀 Auto-redirecting signed-in user to dashboard...');
+      setTimeout(() => {
+        window.location.replace(DASHBOARD_URL);
+      }, 500);
+    }
+  }, [isLoaded, isSignedIn, user, viewMode, DASHBOARD_URL]);
 
   // Landing page view
   if (viewMode === 'landing') {
