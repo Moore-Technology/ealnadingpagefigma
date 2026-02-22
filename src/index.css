@@ -3830,6 +3830,49 @@ html {
   }
 }
 
+@keyframes fireFlicker {
+  0%, 100% {
+    transform: scale(1, 1) translateY(0) skewX(0deg);
+    filter: blur(0px);
+  }
+  10% {
+    transform: scale(1.05, 0.95) translateY(-2px) skewX(-2deg);
+    filter: blur(0.5px);
+  }
+  20% {
+    transform: scale(0.95, 1.05) translateY(1px) skewX(2deg);
+    filter: blur(0px);
+  }
+  30% {
+    transform: scale(1.08, 0.92) translateY(-3px) skewX(-3deg);
+    filter: blur(0.5px);
+  }
+  40% {
+    transform: scale(0.97, 1.03) translateY(0px) skewX(1deg);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.03, 0.97) translateY(-4px) skewX(-1deg);
+    filter: blur(0.5px);
+  }
+  60% {
+    transform: scale(0.98, 1.02) translateY(2px) skewX(3deg);
+    filter: blur(0px);
+  }
+  70% {
+    transform: scale(1.06, 0.94) translateY(-2px) skewX(-2deg);
+    filter: blur(0.5px);
+  }
+  80% {
+    transform: scale(0.96, 1.04) translateY(1px) skewX(2deg);
+    filter: blur(0px);
+  }
+  90% {
+    transform: scale(1.02, 0.98) translateY(-1px) skewX(-1deg);
+    filter: blur(0.5px);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

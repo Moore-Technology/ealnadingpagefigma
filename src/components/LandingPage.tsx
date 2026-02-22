@@ -228,36 +228,39 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     </div>
                   </div>
 
-                  {/* Streak Preview - Enhanced with animated fire */}
+                  {/* Streak Preview - Enhanced with CSS-based animated fire */}
                   <div className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.03] rounded-2xl p-6 border border-white/10 overflow-hidden">
                     {/* Animated background glow */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#FF8C00]/10 to-transparent animate-pulse" />
                     
                     <div className="relative z-10 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        {/* Animated Multi-layer Fire Icon */}
-                        <div className="relative w-10 h-10">
-                          {/* Outer glow */}
-                          <div className="absolute inset-0 bg-[#FF8C00] rounded-full blur-2xl opacity-60 animate-pulse" />
+                        {/* Pure CSS Animated Fire */}
+                        <div className="relative w-12 h-14 flex items-end justify-center">
+                          {/* Red outer glow layer */}
+                          <div className="absolute bottom-0 w-10 h-10 bg-gradient-to-t from-red-600 via-red-500 to-transparent rounded-full blur-sm opacity-80 animate-[fireFlicker_1.5s_ease-in-out_infinite]" 
+                               style={{ animationDelay: '0s' }} />
                           
-                          {/* Red base flame (layer 1) */}
-                          <Flame className="w-10 h-10 text-red-600 absolute top-0 left-0 animate-[flicker_2s_ease-in-out_infinite] drop-shadow-lg" 
-                                 style={{ animationDelay: '0s' }} />
+                          {/* Orange main body layer */}
+                          <div className="absolute bottom-1 w-8 h-11 bg-gradient-to-t from-[#FF8C00] via-[#FFA500] to-yellow-400 rounded-[50%] opacity-90 animate-[fireFlicker_1.2s_ease-in-out_infinite]" 
+                               style={{ 
+                                 animationDelay: '0.3s',
+                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
+                               }} />
                           
-                          {/* Orange middle flame (layer 2) */}
-                          <Flame className="w-10 h-10 text-[#FF8C00] absolute top-0 left-0 animate-[flicker_1.5s_ease-in-out_infinite] drop-shadow-lg" 
-                                 style={{ animationDelay: '0.3s' }} />
+                          {/* Yellow core layer */}
+                          <div className="absolute bottom-2 w-5 h-7 bg-gradient-to-t from-yellow-400 via-yellow-300 to-white opacity-95 animate-[fireFlicker_0.9s_ease-in-out_infinite]" 
+                               style={{ 
+                                 animationDelay: '0.6s',
+                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%'
+                               }} />
                           
-                          {/* Yellow top flame (layer 3) */}
-                          <Flame className="w-10 h-10 text-yellow-400 absolute top-0 left-0 animate-[flicker_1s_ease-in-out_infinite] drop-shadow-lg" 
-                                 style={{ animationDelay: '0.6s' }} />
+                          {/* White hot tip */}
+                          <div className="absolute bottom-4 w-2 h-3 bg-white rounded-full blur-[1px] opacity-80 animate-[fireFlicker_0.7s_ease-in-out_infinite]" 
+                               style={{ animationDelay: '0.2s' }} />
                           
-                          {/* White hot center */}
-                          <Flame className="w-6 h-6 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[flicker_0.8s_ease-in-out_infinite] opacity-80" 
-                                 style={{ animationDelay: '0.2s' }} />
-                          
-                          {/* Pulsing glow ring */}
-                          <div className="absolute -inset-3 bg-gradient-to-t from-[#FF8C00]/40 via-[#FFA500]/20 to-transparent rounded-full blur-xl animate-[pulse_1.5s_ease-in-out_infinite]" />
+                          {/* Glow effect */}
+                          <div className="absolute bottom-0 w-12 h-12 bg-[#FF8C00] rounded-full blur-xl opacity-40 animate-[pulse_2s_ease-in-out_infinite]" />
                         </div>
                         
                         <div>
