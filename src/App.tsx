@@ -57,7 +57,7 @@ export default function App() {
     }
   };
 
-  // Track authentication state changes
+  // Track authentication state changes (logging only, no auto-redirect)
   useEffect(() => {
     console.log('🔄 Auth State Changed:', {
       isLoaded,
@@ -66,15 +66,7 @@ export default function App() {
       userId: user?.id,
       email: user?.primaryEmailAddress?.emailAddress
     });
-
-    // Auto-redirect if user is signed in and on landing page
-    if (isLoaded && isSignedIn && user && viewMode === 'landing') {
-      console.log('🚀 Auto-redirecting signed-in user to dashboard...');
-      setTimeout(() => {
-        window.location.replace(DASHBOARD_URL);
-      }, 500);
-    }
-  }, [isLoaded, isSignedIn, user, viewMode, DASHBOARD_URL]);
+  }, [isLoaded, isSignedIn, user]);
 
   // Landing page view
   if (viewMode === 'landing') {
