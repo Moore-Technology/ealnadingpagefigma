@@ -27,7 +27,6 @@ export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
   const { user, isLoaded, isSignedIn } = useUser();
   const { getToken } = useAuth();
-  const DASHBOARD_URL = 'https://capital-anchovy-0.accounts.dev/__clerk_db_jwt=';
 
   // Debug logging
   console.log('🔍 App State:', {
@@ -35,8 +34,7 @@ export default function App() {
     isSignedIn,
     hasUser: !!user,
     userId: user?.id,
-    viewMode,
-    DASHBOARD_URL
+    viewMode
   });
 
   const handleGetStarted = async () => {
@@ -47,17 +45,13 @@ export default function App() {
       userId: user?.id
     });
     
-    if (user) {
-      console.log('✅ User authenticated, redirecting via Clerk FAPI...');
-      // Use Clerk's FAPI redirect with token for proper session handoff
-      const token = await getToken();
-      const redirectUrl = `${DASHBOARD_URL}${token}#/dashboard`;
-      console.log('🚀 Redirecting to:', redirectUrl);
-      window.location.href = redirectUrl;
+    const token = await getToken();
+    if (token) {
+      console.log('✅ User authenticated, redirecting with token...');
+      window.location.href = `https://app.eacoachpro.com/dashboard?__clerk_db_jwt=${token}`;
     } else {
-      console.log('❌ No user, showing local dashboard');
-      // Show local dashboard for demo
-      setViewMode('dashboard');
+      console.log('❌ No token, redirecting without it');
+      window.location.href = 'https://app.eacoachpro.com/dashboard';
     }
   };
 
