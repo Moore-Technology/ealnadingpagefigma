@@ -202,16 +202,16 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     </div>
                   </div>
 
-                  {/* AI Mentor Preview - Enhanced with message simulation */}
+                  {/* AI Coach Preview - Enhanced with message simulation */}
                   <div className="bg-gradient-to-br from-white/[0.08] to-white/[0.03] rounded-2xl p-6 border border-white/10">
                     <div className="flex items-center gap-3 mb-4">
                       <img 
                         src="/ai-mentor-v2.png" 
-                        alt="AI Mentor" 
+                        alt="AI Coach" 
                         className="object-contain"
                         style={{ width: '84px', height: '84px' }}
                       />
-                      <span className="text-white font-semibold">AI Mentor</span>
+                      <span className="text-white font-semibold">AI Coach</span>
                       <span className="ml-auto px-2 py-1 bg-[#50FA7B]/20 border border-[#50FA7B]/30 rounded-lg text-xs text-[#50FA7B] animate-pulse">
                         Active
                       </span>
@@ -322,7 +322,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="p-3 bg-gradient-to-br from-[#BD93F9] to-[#D4B3FF] rounded-2xl w-fit mb-6 shadow-lg shadow-[#BD93F9]/30">
                 <Brain className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">AI Mentor Chat</h3>
+              <h3 className="text-xl font-bold text-white mb-3">AI Coach Chat</h3>
               <p className="text-slate-400 leading-relaxed">
                 24/7 AI tutor that explains complex tax concepts in simple terms and answers your questions instantly.
               </p>
@@ -604,7 +604,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 ))}
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed">
-                "The AI Mentor saved me so much time. Instead of searching through textbooks, I got instant, clear explanations of complex tax concepts."
+                "The AI Coach saved me so much time. Instead of searching through textbooks, I got instant, clear explanations of complex tax concepts."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#BD93F9] to-[#D4B3FF] rounded-full flex items-center justify-center text-white font-bold">
@@ -672,7 +672,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">AI Mentor Chat</span>
+                  <span className="text-slate-300">AI Coach Chat</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
