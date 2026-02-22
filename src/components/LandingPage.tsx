@@ -235,30 +235,38 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     
                     <div className="relative z-10 flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        {/* Pure CSS Animated Fire */}
-                        <div className="relative w-14 h-16 flex items-end justify-center">
-                          {/* Red outer glow layer - Base */}
-                          <div className="absolute bottom-0 w-12 h-12 bg-gradient-to-t from-red-700 via-red-500 to-orange-400 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] blur-[2px] animate-[fireFlicker_1.5s_ease-in-out_infinite]" 
-                               style={{ animationDelay: '0s' }} />
+                        {/* Pure CSS Animated Fire - Simplified */}
+                        <div className="relative w-12 h-14 flex items-center justify-center">
+                          {/* Red outer layer */}
+                          <div className="absolute bottom-0 w-10 h-10 bg-gradient-to-t from-red-600 via-red-500 to-orange-500 opacity-80 animate-[fireFlicker_1.5s_ease-in-out_infinite]" 
+                               style={{ 
+                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                                 animationDelay: '0s'
+                               }} />
                           
-                          {/* Orange main body layer */}
-                          <div className="absolute bottom-1 w-10 h-13 bg-gradient-to-t from-orange-600 via-orange-400 to-yellow-300 rounded-[50%_50%_50%_50%/65%_65%_35%_35%] animate-[fireFlicker_1.2s_ease-in-out_infinite] shadow-2xl shadow-orange-500/50" 
-                               style={{ animationDelay: '0.3s' }} />
+                          {/* Orange middle layer */}
+                          <div className="absolute bottom-1 w-8 h-11 bg-gradient-to-t from-orange-600 via-orange-400 to-yellow-400 opacity-90 animate-[fireFlicker_1.2s_ease-in-out_infinite]" 
+                               style={{ 
+                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                                 animationDelay: '0.3s'
+                               }} />
                           
-                          {/* Yellow bright core layer */}
-                          <div className="absolute bottom-2 w-7 h-9 bg-gradient-to-t from-yellow-500 via-yellow-300 to-yellow-100 rounded-[50%_50%_50%_50%/70%_70%_30%_30%] animate-[fireFlicker_0.9s_ease-in-out_infinite] shadow-lg shadow-yellow-400/60" 
-                               style={{ animationDelay: '0.6s' }} />
+                          {/* Yellow inner layer */}
+                          <div className="absolute bottom-2 w-6 h-8 bg-gradient-to-t from-yellow-400 via-yellow-300 to-white opacity-95 animate-[fireFlicker_0.9s_ease-in-out_infinite]" 
+                               style={{ 
+                                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                                 animationDelay: '0.6s'
+                               }} />
                           
-                          {/* White hot tip */}
-                          <div className="absolute bottom-5 w-3 h-4 bg-gradient-to-t from-yellow-200 to-white rounded-[50%_50%_50%_50%/75%_75%_25%_25%] blur-[0.5px] animate-[fireFlicker_0.7s_ease-in-out_infinite]" 
-                               style={{ animationDelay: '0.2s' }} />
+                          {/* White hot center */}
+                          <div className="absolute bottom-4 w-3 h-4 bg-white opacity-70 animate-[fireFlicker_0.7s_ease-in-out_infinite]" 
+                               style={{ 
+                                 borderRadius: '50%',
+                                 animationDelay: '0.2s'
+                               }} />
                           
-                          {/* Intense glow effect */}
-                          <div className="absolute bottom-0 w-16 h-16 bg-gradient-radial from-orange-500/60 via-orange-600/30 to-transparent rounded-full blur-2xl animate-[pulse_2s_ease-in-out_infinite]" />
-                          
-                          {/* Additional sparkle effects */}
-                          <div className="absolute bottom-6 left-2 w-1 h-1 bg-white rounded-full animate-[ping_2s_ease-in-out_infinite]" style={{ animationDelay: '0.5s' }} />
-                          <div className="absolute bottom-7 right-2 w-1 h-1 bg-yellow-200 rounded-full animate-[ping_2.5s_ease-in-out_infinite]" style={{ animationDelay: '1s' }} />
+                          {/* Outer glow */}
+                          <div className="absolute bottom-0 w-14 h-14 bg-orange-500 opacity-30 blur-xl animate-pulse" />
                         </div>
                         
                         <div>
