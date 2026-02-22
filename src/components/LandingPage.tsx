@@ -209,7 +209,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                         src="/ai-mentor-new.png" 
                         alt="AI Mentor" 
                         className="w-16 h-16 object-contain"
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ 
+                          mixBlendMode: 'multiply',
+                          filter: 'brightness(1.2) contrast(1.1)'
+                        }}
                       />
                       <span className="text-white font-semibold">AI Mentor</span>
                       <span className="ml-auto px-2 py-1 bg-[#50FA7B]/20 border border-[#50FA7B]/30 rounded-lg text-xs text-[#50FA7B] animate-pulse">
