@@ -211,7 +211,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                         className="object-contain"
                         style={{ width: '84px', height: '84px' }}
                       />
-                      <span className="text-white font-semibold">AI Coach</span>
+                      <span className="text-white font-semibold text-lg">AI Coach™</span>
                       <span className="ml-auto px-2 py-1 bg-[#50FA7B]/20 border border-[#50FA7B]/30 rounded-lg text-xs text-[#50FA7B] animate-pulse">
                         Active
                       </span>
@@ -322,7 +322,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="p-3 bg-gradient-to-br from-[#BD93F9] to-[#D4B3FF] rounded-2xl w-fit mb-6 shadow-lg shadow-[#BD93F9]/30">
                 <Brain className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">AI Coach Chat</h3>
+              <h3 className="text-xl font-bold text-white mb-3">AI Coach™ Chat</h3>
               <p className="text-slate-400 leading-relaxed">
                 24/7 AI tutor that explains complex tax concepts in simple terms and answers your questions instantly.
               </p>
@@ -672,7 +672,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">AI Coach Chat</span>
+                  <span className="text-slate-300">AI Coach™ Chat</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
