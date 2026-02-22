@@ -25,7 +25,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 <GraduationCap className="w-7 h-7 text-white" />
               </div>
               <div>
-                <span className="text-white text-xl font-bold">EA Study Pro</span>
+                <span className="text-white text-xl font-bold">EA Coach Pro</span>
                 <p className="text-xs text-slate-400">AI-Powered Learning Platform</p>
               </div>
             </div>
@@ -325,7 +325,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               Leave Traditional Study Guides Behind
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              See how EA Study Pro's AI-powered platform outperforms legacy study materials
+              See how EA Coach Pro's AI-powered platform outperforms legacy study materials
             </p>
           </div>
 
@@ -341,7 +341,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 </div>
                 <div className="p-6 bg-gradient-to-br from-[#FF8C00]/10 to-[#BD93F9]/10">
                   <p className="text-[#FF8C00] text-sm mb-2">New Way</p>
-                  <h3 className="text-white font-bold text-lg">EA Study Pro</h3>
+                  <h3 className="text-white font-bold text-lg">EA Coach Pro</h3>
                   <p className="text-[#50FA7B] text-sm">(AI-Powered)</p>
                 </div>
               </div>
@@ -433,7 +433,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 onClick={onGetStarted}
                 className="group px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-2xl shadow-[#FF8C00]/40 hover:shadow-[#FF8C00]/60 font-semibold text-lg inline-flex items-center gap-2"
               >
-                Try EA Study Pro Free
+                Try EA Coach Pro Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <p className="text-slate-400 text-sm mt-4">
@@ -510,7 +510,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               Loved by Tax Professionals
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Join thousands of successful EAs who trusted EA Study Pro
+              Join thousands of successful EAs who trusted EA Coach Pro
             </p>
           </div>
 
@@ -779,7 +779,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
           <div className="pt-8 border-t border-white/10">
             <p className="text-center text-slate-400 text-sm">
-              © 2026 EA Study Pro. All rights reserved.
+              © 2026 EA Coach Pro. All rights reserved.
             </p>
           </div>
         </div>
