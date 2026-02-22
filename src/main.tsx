@@ -10,8 +10,8 @@
     throw new Error("Missing Publishable Key");
   }
 
-  const afterSignInUrl = "https://app.eacoachpro.com/dashboard";
-  const afterSignUpUrl = "https://app.eacoachpro.com/dashboard";
+  const afterSignInUrl = "https://app.eacoachpro.com";
+  const afterSignUpUrl = "https://app.eacoachpro.com";
 
   console.log('🔐 Clerk Configuration:', {
     hasPublishableKey: !!PUBLISHABLE_KEY,

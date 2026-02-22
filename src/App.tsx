@@ -38,7 +38,7 @@ export default function App() {
 
   const handleGetStarted = () => {
     console.log('🎯 handleGetStarted called - redirecting to dashboard');
-    window.location.href = 'https://app.eacoachpro.com/dashboard';
+    window.location.href = 'https://app.eacoachpro.com';
   };
 
   // Track authentication state changes (logging only, no auto-redirect)
