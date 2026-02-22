@@ -11,7 +11,11 @@
   }
 
   createRoot(document.getElementById("root")!).render(
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider 
+      publishableKey={PUBLISHABLE_KEY}
+      afterSignInUrl="https://redesigneastudyappdashboard.vercel.app/dashboard"
+      afterSignUpUrl="https://redesigneastudyappdashboard.vercel.app/dashboard"
+    >
       <App />
     </ClerkProvider>
   );
