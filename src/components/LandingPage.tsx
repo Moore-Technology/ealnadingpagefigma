@@ -399,7 +399,6 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 <div className="p-6 border-r border-white/10">
                   <p className="text-slate-400 text-sm mb-2">Old Way</p>
                   <h3 className="text-white font-bold text-lg">Traditional Guides</h3>
-                  <p className="text-slate-500 text-sm">(Gleim, Becker)</p>
                 </div>
                 <div className="p-6 bg-gradient-to-br from-[#FF8C00]/10 to-[#BD93F9]/10">
                   <p className="text-[#FF8C00] text-sm mb-2">New Way</p>
