@@ -62,12 +62,12 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
             <div className="flex items-center gap-3">
               <SignedOut>
-                <SignInButton mode="modal">
+                <SignInButton mode="modal" forceRedirectUrl="https://app.eacoachpro.com/dashboard">
                   <button className="hidden md:block px-5 py-2.5 text-white hover:bg-white/10 border border-white/20 rounded-xl transition-all text-sm">
                     Sign In
                   </button>
                 </SignInButton>
-                <SignUpButton mode="modal">
+                <SignUpButton mode="modal" forceRedirectUrl="https://app.eacoachpro.com/dashboard">
                   <button className="px-5 py-2.5 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-lg shadow-[#FF8C00]/30 hover:shadow-[#FF8C00]/50 text-sm font-semibold flex items-center gap-2">
                     Get Started Free
                     <ArrowRight className="w-4 h-4" />
@@ -120,7 +120,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <SignedOut>
-                  <SignUpButton mode="modal">
+                  <SignUpButton mode="modal" forceRedirectUrl="https://app.eacoachpro.com/dashboard">
                     <button className="group px-8 py-4 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-2xl shadow-[#FF8C00]/40 hover:shadow-[#FF8C00]/60 font-semibold text-lg flex items-center justify-center gap-2">
                       Start Free Trial
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
