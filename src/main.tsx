@@ -10,25 +10,8 @@
     throw new Error("Missing Publishable Key");
   }
 
-  const afterSignInUrl = "https://app.eacoachpro.com";
-  const afterSignUpUrl = "https://app.eacoachpro.com";
-
-  console.log('🔐 Clerk Configuration:', {
-    hasPublishableKey: !!PUBLISHABLE_KEY,
-    keyPrefix: PUBLISHABLE_KEY?.substring(0, 10) + '...',
-    domain: 'eacoachpro.com',
-    signInFallbackRedirectUrl: afterSignInUrl,
-    signUpFallbackRedirectUrl: afterSignUpUrl
-  });
-
-  createRoot(document.getElementById("root")!).render(
-    <ClerkProvider 
-      publishableKey={PUBLISHABLE_KEY}
-      domain="eacoachpro.com"
-      signInFallbackRedirectUrl={afterSignInUrl}
-      signUpFallbackRedirectUrl={afterSignUpUrl}
-    >
-      <App />
-    </ClerkProvider>
-  );
-  
+createRoot(document.getElementById("root")!).render(
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <App />
+  </ClerkProvider>
+);
