@@ -11,7 +11,7 @@
   }
 
 createRoot(document.getElementById("root")!).render(
-  <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY} domain="eacoachpro.com">
     <App />
   </ClerkProvider>
 );
