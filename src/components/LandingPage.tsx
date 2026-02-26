@@ -8,7 +8,7 @@ interface LandingPageProps {
 }
 
 export function LandingPage({ onGetStarted }: LandingPageProps) {
-  const { isSignedIn, isLoaded } = useUser();
+  const { isSignedIn, isLoaded, user } = useUser();
   const [aiMessages, setAiMessages] = useState<string[]>([]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [hasRedirected, setHasRedirected] = useState(false);
@@ -20,14 +20,27 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
     "You're on track to pass! Keep up the momentum."
   ];
 
+  // Log auth state changes
+  useEffect(() => {
+    console.log('🏠 Landing Page Auth State:', {
+      isLoaded,
+      isSignedIn,
+      userId: user?.id,
+      hasRedirected,
+      cookies: document.cookie
+    });
+  }, [isLoaded, isSignedIn, user, hasRedirected]);
+
   // Auto-redirect after sign-in with delay for satellite sync
   useEffect(() => {
     if (isLoaded && isSignedIn && !hasRedirected) {
+      console.log('✅ Sign-in detected! Waiting 2 seconds before redirect...');
       setHasRedirected(true);
-      // Wait 1 second for cookies to propagate to parent domain
+      // Wait 2 seconds for cookies to propagate to parent domain
       setTimeout(() => {
+        console.log('🚀 Redirecting to dashboard...');
         window.location.href = 'https://app.eacoachpro.com/diagnostic-quiz';
-      }, 1000);
+      }, 2000);
     }
   }, [isSignedIn, isLoaded, hasRedirected]);
 
