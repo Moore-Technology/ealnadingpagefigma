@@ -14,8 +14,6 @@ createRoot(document.getElementById("root")!).render(
   <ClerkProvider 
     publishableKey={PUBLISHABLE_KEY}
     domain="eacoachpro.com"
-    signInFallbackRedirectUrl="https://app.eacoachpro.com/diagnostic-quiz"
-    signUpFallbackRedirectUrl="https://app.eacoachpro.com/diagnostic-quiz"
   >
     <App />
   </ClerkProvider>
