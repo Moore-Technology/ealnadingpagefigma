@@ -31,18 +31,18 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
     });
   }, [isLoaded, isSignedIn, user, hasRedirected]);
 
-  // Auto-redirect disabled for debugging
-  // useEffect(() => {
-  //   if (isLoaded && isSignedIn && !hasRedirected) {
-  //     console.log('✅ Sign-in detected! Waiting 2 seconds before redirect...');
-  //     setHasRedirected(true);
-  //     // Wait 2 seconds for cookies to propagate to parent domain
-  //     setTimeout(() => {
-  //       console.log('🚀 Redirecting to dashboard...');
-  //       window.location.href = 'https://app.eacoachpro.com/diagnostic-quiz';
-  //     }, 2000);
-  //   }
-  // }, [isSignedIn, isLoaded, hasRedirected]);
+  // Auto-redirect after sign-in with delay for satellite sync
+  useEffect(() => {
+    if (isLoaded && isSignedIn && !hasRedirected) {
+      console.log('✅ Sign-in detected! Waiting 5 seconds before redirect...');
+      setHasRedirected(true);
+      // Wait 5 seconds for cookies to propagate and session to be fully established
+      setTimeout(() => {
+        console.log('🚀 Redirecting to dashboard...');
+        window.location.href = 'https://app.eacoachpro.com/diagnostic-quiz';
+      }, 5000);
+    }
+  }, [isSignedIn, isLoaded, hasRedirected]);
 
   useEffect(() => {
     // Simulate AI messages appearing
