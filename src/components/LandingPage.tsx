@@ -37,14 +37,18 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
     const urlParams = new URLSearchParams(window.location.search);
     const isSatelliteSync = urlParams.has('__clerk_satellite_url');
     
-    if (isLoaded && isSignedIn && !hasRedirected && !isSatelliteSync) {
-      console.log('✅ Sign-in detected! Waiting 5 seconds before redirect...');
+    // Only redirect if client_uat cookie has a valid timestamp (not 0)
+    const clientUat = document.cookie.split('; ').find(row => row.startsWith('__client_uat='));
+    const hasValidSession = clientUat && !clientUat.includes('__client_uat=0');
+    
+    if (isLoaded && isSignedIn && hasValidSession && !hasRedirected && !isSatelliteSync) {
+      console.log('✅ Sign-in detected with valid session! Waiting 3 seconds before redirect...');
       setHasRedirected(true);
-      // Wait 5 seconds for Clerk to fully process session cookies
+      // Wait 3 seconds for UI feedback before redirecting
       setTimeout(() => {
         console.log('🚀 Redirecting to dashboard...');
         window.location.href = 'https://app.eacoachpro.com/diagnostic-quiz';
-      }, 5000);
+      }, 3000);
     }
   }, [isSignedIn, isLoaded, hasRedirected]);
 
