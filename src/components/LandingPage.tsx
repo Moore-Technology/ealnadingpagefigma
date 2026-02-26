@@ -31,26 +31,23 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
     });
   }, [isLoaded, isSignedIn, user, hasRedirected]);
 
-  // Auto-redirect after sign-in with delay for session processing
-  useEffect(() => {
-    // Don't redirect if we're handling satellite sync params
-    const urlParams = new URLSearchParams(window.location.search);
-    const isSatelliteSync = urlParams.has('__clerk_satellite_url');
-    
-    // Only redirect if client_uat cookie has a valid timestamp (not 0)
-    const clientUat = document.cookie.split('; ').find(row => row.startsWith('__client_uat='));
-    const hasValidSession = clientUat && !clientUat.includes('__client_uat=0');
-    
-    if (isLoaded && isSignedIn && hasValidSession && !hasRedirected && !isSatelliteSync) {
-      console.log('✅ Sign-in detected with valid session! Waiting 3 seconds before redirect...');
-      setHasRedirected(true);
-      // Wait 3 seconds for UI feedback before redirecting
-      setTimeout(() => {
-        console.log('🚀 Redirecting to dashboard...');
-        window.location.href = 'https://app.eacoachpro.com/diagnostic-quiz';
-      }, 3000);
-    }
-  }, [isSignedIn, isLoaded, hasRedirected]);
+  // Auto-redirect disabled - let users click "Go to Dashboard" manually
+  // This prevents interference with satellite sync handshake
+  // useEffect(() => {
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   const isSatelliteSync = urlParams.has('__clerk_satellite_url');
+  //   const clientUat = document.cookie.split('; ').find(row => row.startsWith('__client_uat='));
+  //   const hasValidSession = clientUat && !clientUat.includes('__client_uat=0');
+  //   
+  //   if (isLoaded && isSignedIn && hasValidSession && !hasRedirected && !isSatelliteSync) {
+  //     console.log('✅ Sign-in detected with valid session! Waiting 3 seconds before redirect...');
+  //     setHasRedirected(true);
+  //     setTimeout(() => {
+  //       console.log('🚀 Redirecting to dashboard...');
+  //       window.location.href = 'https://app.eacoachpro.com/diagnostic-quiz';
+  //     }, 3000);
+  //   }
+  // }, [isSignedIn, isLoaded, hasRedirected]);
 
   useEffect(() => {
     // Simulate AI messages appearing
