@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
 
 interface LandingPageProps {
   onGetStarted: () => void;
+  onNavigateToFAQ: () => void;
 }
 
-export function LandingPage({ onGetStarted }: LandingPageProps) {
+export function LandingPage({ onGetStarted, onNavigateToFAQ }: LandingPageProps) {
   const { isSignedIn, isLoaded, user } = useUser();
   const [aiMessages, setAiMessages] = useState<string[]>([]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -801,7 +802,14 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <ul className="space-y-2">
                 <li><a href="#features" className="text-slate-400 hover:text-white transition-colors text-sm">Features</a></li>
                 <li><a href="#pricing" className="text-slate-400 hover:text-white transition-colors text-sm">Pricing</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">FAQ</a></li>
+                <li>
+                  <button 
+                    onClick={onNavigateToFAQ}
+                    className="text-slate-400 hover:text-white transition-colors text-sm"
+                  >
+                    FAQ
+                  </button>
+                </li>
                 <li><a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">Demo</a></li>
               </ul>
             </div>

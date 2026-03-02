@@ -17,11 +17,12 @@ import { ExamPartProgress } from './components/ExamPartProgress';
 import { DomainBridge } from './components/DomainBridge';
 import { ResponsiveNavigation } from './components/ResponsiveNavigation';
 import { LandingPage } from './components/LandingPage';
+import { FAQ } from './components/FAQ';
 import { GraduationCap, Bell, Settings, Menu, Zap, Trophy, BookOpen, Target } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react';
 
-type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'part-progress' | 'domain-bridge';
+type ViewMode = 'landing' | 'dashboard' | 'exam-sim' | 'ethics' | 'career' | 'part-progress' | 'domain-bridge' | 'faq';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('landing');
@@ -54,7 +55,12 @@ export default function App() {
 
   // Landing page view
   if (viewMode === 'landing') {
-    return <LandingPage onGetStarted={handleGetStarted} />;
+    return <LandingPage onGetStarted={handleGetStarted} onNavigateToFAQ={() => setViewMode('faq')} />;
+  }
+
+  // FAQ view
+  if (viewMode === 'faq') {
+    return <FAQ onBack={() => setViewMode('landing')} />;
   }
 
   // Exam simulation view
