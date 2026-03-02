@@ -745,7 +745,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           </div>
 
           <p className="text-center text-slate-400 text-sm mt-8">
-            All plans include a 7-day free trial. No credit card required.
+            All plans include a 7-day free trial.
           </p>
         </div>
       </section>
