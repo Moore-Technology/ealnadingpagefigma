@@ -75,13 +75,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-[1400px] mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-to-br from-[#FF8C00] to-[#FFA500] rounded-xl shadow-lg shadow-[#FF8C00]/30">
-                <GraduationCap className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <span className="text-white text-xl font-bold">EA Coach Pro</span>
-                <p className="text-xs text-slate-400">AI-Powered Learning Platform</p>
-              </div>
+              <img 
+                src="/ea-coach-logo.png" 
+                alt="EA Coach Pro" 
+                className="h-12 w-auto"
+              />
             </div>
             
             <div className="hidden md:flex items-center gap-8">
@@ -823,10 +821,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-gradient-to-br from-[#FF8C00] to-[#FFA500] rounded-xl shadow-lg shadow-[#FF8C00]/30">
-                  <GraduationCap className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-white text-xl font-bold">EA Study Pro</span>
+                <img 
+                  src="/ea-coach-logo.png" 
+                  alt="EA Coach Pro" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-slate-400 text-sm">
                 AI-powered platform to help you pass the Enrolled Agent exam faster.
