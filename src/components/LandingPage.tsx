@@ -135,7 +135,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 Pass Your EA Exam
-                <span className="block text-[#FF00FF]">
+                <span className="block font-extrabold" style={{ color: '#FF00FF' }}>
                   3x Faster
                 </span>
               </h1>
