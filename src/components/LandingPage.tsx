@@ -674,13 +674,13 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
             {/* Monthly Plan */}
             <div className="bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-xl rounded-[24px] border border-white/10 p-8">
               <h3 className="text-2xl font-bold text-white mb-2">Monthly</h3>
               <p className="text-slate-400 mb-6">Perfect for focused prep</p>
               <div className="mb-6">
-                <span className="text-5xl font-extrabold text-white">$79</span>
+                <span className="text-5xl font-extrabold text-white">$14.99</span>
                 <span className="text-slate-400">/month</span>
               </div>
               <ul className="space-y-4 mb-8">
@@ -706,57 +706,19 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               </button>
             </div>
 
-            {/* 3-Month Plan - Most Popular */}
-            <div className="relative bg-gradient-to-br from-[#FF8C00]/20 to-white/[0.08] backdrop-blur-xl rounded-[24px] border-2 border-[#FF8C00] p-8 shadow-2xl shadow-[#FF8C00]/20">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] rounded-full text-white text-sm font-semibold">
-                Most Popular
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">3 Months</h3>
-              <p className="text-slate-400 mb-6">Best value for most students</p>
+            {/* Annual Plan */}
+            <div className="bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-xl rounded-[24px] border border-white/10 p-8">
+              <h3 className="text-2xl font-bold text-white mb-2">Annual</h3>
+              <p className="text-slate-400 mb-6">Best value - Save $59.88</p>
               <div className="mb-6">
-                <span className="text-5xl font-extrabold text-white">$199</span>
-                <span className="text-slate-400">/3 months</span>
-                <p className="text-sm text-[#50FA7B] mt-1">Save $38</p>
+                <span className="text-5xl font-extrabold text-white">$120</span>
+                <span className="text-slate-400">/year</span>
+                <p className="text-sm text-[#50FA7B] mt-1">Just $10/month</p>
               </div>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
                   <span className="text-slate-300">Everything in Monthly</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Priority AI support</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Advanced analytics</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Study plan coaching</span>
-                </li>
-              </ul>
-              <button 
-                onClick={onGetStarted}
-                className="w-full px-6 py-3 bg-gradient-to-r from-[#FF8C00] to-[#FFA500] hover:from-[#FFA500] hover:to-[#FF8C00] text-white rounded-xl transition-all shadow-lg shadow-[#FF8C00]/30 font-semibold"
-              >
-                Start Free Trial
-              </button>
-            </div>
-
-            {/* Annual Plan */}
-            <div className="bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-xl rounded-[24px] border border-white/10 p-8">
-              <h3 className="text-2xl font-bold text-white mb-2">Annual</h3>
-              <p className="text-slate-400 mb-6">Maximum flexibility</p>
-              <div className="mb-6">
-                <span className="text-5xl font-extrabold text-white">$499</span>
-                <span className="text-slate-400">/year</span>
-                <p className="text-sm text-[#50FA7B] mt-1">Save $449</p>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-300">Everything in 3 Months</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#50FA7B] mt-0.5 flex-shrink-0" />
