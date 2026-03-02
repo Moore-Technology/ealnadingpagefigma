@@ -803,9 +803,6 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                   Start Your Free Trial
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="px-10 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-xl transition-all font-semibold text-lg">
-                  Schedule a Demo
-                </button>
               </div>
               <p className="text-slate-400 text-sm mt-6">
                 7-day free trial • No credit card required • Cancel anytime
