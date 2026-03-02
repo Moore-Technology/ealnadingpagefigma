@@ -247,7 +247,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                         <button className="flex-1 px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg text-xs text-white transition-all hover:scale-105">
                           Start Lesson
                         </button>
-                        <button className="flex-1 px-3 py-2 bg-[#4682B4] text-white rounded-lg text-xs font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#4682B4]/50">
+                        <button className="flex-1 px-3 py-2 text-white rounded-lg text-xs font-semibold transition-all hover:scale-105 hover:shadow-lg" style={{ backgroundColor: '#4682B4' }}>
                           Take Quiz
                         </button>
                       </div>
