@@ -135,7 +135,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 Pass Your EA Exam
-                <span className="block bg-gradient-to-r from-[#FF8C00] to-[#FFA500] bg-clip-text text-transparent">
+                <span className="block text-[#FF00FF]">
                   3x Faster
                 </span>
               </h1>
