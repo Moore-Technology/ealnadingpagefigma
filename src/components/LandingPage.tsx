@@ -75,11 +75,14 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-[1400px] mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img 
-                src="/ea-coach-logo.png" 
-                alt="EA Coach Pro" 
-                className="h-12 w-auto"
-              />
+              <div>
+                <img 
+                  src="/ea-coach-logo.png" 
+                  alt="EA Coach Pro" 
+                  className="h-12 w-auto"
+                />
+                <p className="text-xs text-slate-400">AI-Powered Learning Platform</p>
+              </div>
             </div>
             
             <div className="hidden md:flex items-center gap-8">
