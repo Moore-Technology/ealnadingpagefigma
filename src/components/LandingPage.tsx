@@ -78,7 +78,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <img 
                 src="/newealogo.png" 
                 alt="EA Coach Pro" 
-                className="w-32 h-8 object-contain"
+                className="w-48 h-12 object-contain"
               />
             </div>
             
@@ -824,7 +824,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 <img 
                   src="/newealogo.png" 
                   alt="EA Coach Pro" 
-                  className="w-24 h-6 object-contain"
+                  className="w-36 h-9 object-contain"
                 />
               </div>
               <p className="text-slate-400 text-sm">
