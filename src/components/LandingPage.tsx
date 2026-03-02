@@ -810,7 +810,6 @@ export function LandingPage({ onGetStarted, onNavigateToFAQ }: LandingPageProps)
                     FAQ
                   </button>
                 </li>
-                <li><a href="#" className="text-slate-400 hover:text-white transition-colors text-sm">Demo</a></li>
               </ul>
             </div>
 
